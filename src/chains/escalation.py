@@ -30,9 +30,7 @@ escalation_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-escalation_check_model = ChatOpenAI(
-    model="gpt-5.6-luna", use_responses_api=True, temperature=0
-)
+escalation_check_model = ChatOpenAI(model="gpt-6-luna", use_responses_api=True)
 
 ESCALATION_CHECK_CHAIN = (
     escalation_prompt | escalation_check_model.with_structured_output(EscalationCheck)

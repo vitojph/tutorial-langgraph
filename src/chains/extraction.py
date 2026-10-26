@@ -94,9 +94,7 @@ info_parse_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-notice_parser_model = ChatOpenAI(
-    model="gpt-5.6-luna", use_responses_api=True, temperature=0
-)
+notice_parser_model = ChatOpenAI(model="gpt-6-luna", use_responses_api=True)
 
 NOTICE_PARSER_CHAIN = info_parse_prompt | notice_parser_model.with_structured_output(
     NoticeEmailExtract
